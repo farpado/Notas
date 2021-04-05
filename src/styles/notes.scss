@@ -1,0 +1,44 @@
+
+@import './custom_colors';
+
+.notes{
+  height: calc(100% - 70px);
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+}
+.list.notes-list{
+  cursor: pointer;
+}
+
+.bm-menu{
+  background: white;
+  padding-top: 10px;
+}
+
+.navbar-item{
+  margin-left: 50px;
+}
+
+div.list-item.is-active{
+  margin: 10px;
+  background: $custom-grey;
+  border-radius: 5px;
+}
+
+.bm-item
+{
+  margin-left: 10px;
+  //display: none;
+}
+.list{
+  margin-left: 10px;
+}
+
+.notes-editor{
+  height: calc(100% - 43px);
+
+  .quill{
+    height: 100%;
+  }
+}
