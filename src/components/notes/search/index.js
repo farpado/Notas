@@ -18,7 +18,7 @@ function Search(props) {
                 <Input type="text"
                     name={query}
                     value={query}
-                    placeholder="Search note..."
+                    placeholder="Procurar nota..."
                     onChange={(e) => setQuery(e.target.value)}
                     onKeyDown={handleKeyDown} />
             </Column>
