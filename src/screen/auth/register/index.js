@@ -21,8 +21,8 @@ function Register() {
 
                                     <Section>
                                         <Column.Group centered>
-                                            <Column size={8}>
-                                               {/*  <img className="img" src={LogoImage}  /> */}
+                                            <Column size={4}>
+                                                <img className="img" src={LogoImage}  />
                                             </Column>
                                         </Column.Group>
 

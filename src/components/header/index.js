@@ -29,9 +29,12 @@ function Header() {
 
                 <Navbar.Menu id="navbar-menu"
                     active={openMenu.toString()}
-                    onClick={() => setOpenMenu(!openMenu)} >
+                    onClick={() => setOpenMenu(!openMenu)}  >
                     <Navbar.Segment as="div" className="navbar-item navbar-end" align="right">
                         <Column.Group>
+                            <Column>
+                                <Link to="/notes" className="button is-white has-text-custom-blue">Notas</Link>
+                            </Column>
                             <Column>
                                 <Link to="/register" className="button is-white has-text-custom-blue">Register</Link>
                             </Column>

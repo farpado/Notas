@@ -12,25 +12,26 @@ function Login() {
             <Section size="undefined" className="auth">
                 <Container>
                     <Column.Group centered>
-                        <Column size={3}>
+                        <Column size={5}>
                             <Card>
                                 <Card.Content>
                                     <Section>
                                         <Column.Group centered>
-                                            <Column size={12}>
-                                              {/*   <img src={LogoImage} /> */}
+                                            <Column size={5}>
+                                                <img src={LogoImage} />
                                             </Column>
                                         </Column.Group>
 
                                         <Column.Group>
                                             <Column size={12}>
+                                            <LoginForm/>
                                                 <Title size={6} className="has-text-grey has-text-centered">
                                                     Suas notas na nuvem
                                                  </Title>
                                             </Column>
                                         </Column.Group>
                                     </Section>
-                                    <LoginForm/>
+                                   
                                 </Card.Content>
                             </Card>
                         </Column>

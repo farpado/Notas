@@ -5,13 +5,12 @@
 nav.navbar {
     height: 70px;
     border-bottom: 3px solid black;
-    //border-radius: 10px;
-    //background-color: #5ce1e6;
    
     .navbar-brand {  
       img {
         height: 40px;
         margin-top:15px;
+        padding-left: 10px;
       }
     }
     .logo{
@@ -24,14 +23,16 @@ nav.navbar {
     }
   }
 
- /*  .navbar-logged{
+
+  .navbar-logged{
     .navbar-menu{
       background-color: $custom-blue;  
     }
-  } */
+    .navbar-menu.is-active{
+      margin-top: -15px;
+    }
+  }
 
- /*  .column img
-  {
-    margin-left: 20px;
-   position: absolute;
-  } */
+  
+
+ 

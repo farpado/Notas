@@ -42,7 +42,9 @@ function Notes(props) {
 
   const searchNotes = async (query) => {
     const response = await NotesService.search(query);
+    //console.log('xablau' ,response.data);
     setNotes(response.data);
+    
   }
 
   const selectNote = (id) => {
