@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Button, Field, Control, Input, Column, Title, Help, Label } from "rbx";
+import { Button, Field, Control, Input, Column, Help, Label } from "rbx";
 import UserService from '../../../services/users';
 
 
@@ -33,7 +33,7 @@ function UsersEditFormPassword() {
       <form onSubmit={handleSubmit}>
         <Field>
           <Control>
-            <Label className="has-text-grey">Password</Label>
+            <Label className="has-text-grey">Senha</Label>
             <Input
               type="password"
               value={password}
@@ -45,7 +45,7 @@ function UsersEditFormPassword() {
         </Field>
         <Field>
           <Control>
-            <Label className="has-text-grey">Password Confirmation</Label>
+            <Label className="has-text-grey">Confirme sua senha</Label>
             <Input
               type="password"
               value={password_confirmation}
@@ -60,19 +60,19 @@ function UsersEditFormPassword() {
           <Control>
             <Column.Group>
               <Column className="has-text-right">
-                <Button color="custom-purple" outlined>Update Password</Button>
+                <Button color="custom-purple" outlined>Atualizar Senha</Button>
               </Column>
             </Column.Group>
           </Control>
         </Field>
         {status == "error_update" &&
-          <Help color="danger">Problem in password update</Help>
+          <Help color="danger">Falha ao atualizar senha</Help>
         }
         {status == "error_confirmation_password" &&
-          <Help color="danger">Password don't match</Help>
+          <Help color="danger">Senhas Incorretas</Help>
         }
         {status == "success" &&
-          <Help color="primary">Updated with success</Help>
+          <Help color="primary">Atualizada com sucesso</Help>
         }
       </form>
     </Fragment>

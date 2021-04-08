@@ -2,6 +2,11 @@ import React,{Fragment, useState} from 'react';
 import { Button, Field, Control, Input, Column, Section, Help, Label } from "rbx";
 import { Redirect } from 'react-router-dom';
 import UserService from '../../../services/users';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+
+let eye = <FontAwesomeIcon icon={ faEye }/>
+let eyeSlash = <FontAwesomeIcon icon={faEyeSlash} /> 
 
 
 function LoginForm(){
@@ -11,6 +16,7 @@ function LoginForm(){
     const [redirectToRegister, setRedirectToRegister] = useState(false);
     const [redirectToNotes, setRedirectToNotes] = useState(false);
     const [error, setError] = useState(false);
+    const [passowordShown, setPassowordShown] = useState(false);
 
     if(redirectToRegister == true)
     return <Redirect to={{pathname: "/register"}}/>
@@ -26,6 +32,10 @@ function LoginForm(){
         } catch (error) {
             setError(true)
         }
+    }
+
+    const togglePasswordVisiblity = () =>{
+        setPassowordShown(passowordShown ? false : true);
     }
 
     return(
@@ -49,12 +59,13 @@ function LoginForm(){
                 <Label size="small">Password:</Label>
                 <Control>
                   <Input 
-                    type="password" 
+                    type={passowordShown ? "text" : "password" }
                     required
                     name="password"
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                   />
+                  <i className="password-icon" onClick={togglePasswordVisiblity}>{passowordShown ? eye : eyeSlash}</i>
                 </Control>
               </Field>
               <Field>

@@ -5,10 +5,8 @@ import UserService from '../../../services/users';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
-
-
 let eye = <FontAwesomeIcon icon={faEye} />
-let EyeSlash = <FontAwesomeIcon icon={faEyeSlash} />
+let eyeSlash = <FontAwesomeIcon icon={faEyeSlash} />
 
 function RegisterForm() {
 
@@ -102,7 +100,7 @@ function RegisterForm() {
                   value={confirmPassword}
                   onChange={e => setConfirmPassoword(e.target.value)}
                 />
-                  <i className="password-icon" onClick={togglePasswordVisiblity}> {passwordShown ? eye : EyeSlash }</i>
+                  <i className="password-icon" onClick={togglePasswordVisiblity}> {passwordShown ? eye : eyeSlash }</i>
               </Control>
             </Field>
             {/* teste */}

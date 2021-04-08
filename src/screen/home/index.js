@@ -1,11 +1,15 @@
 import React, { Fragment } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PresentationImage from '../../assets/images/presentation.png';
 import Header from '../../components/header';
-import { Column, Section, Title, Container } from 'rbx';
-import  '../../styles/home.scss';
+import { Column, Section, Title, Container, File, Button, Image } from 'rbx';
+import '../../styles/home.scss';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUpload } from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
+
     return (
         <Fragment>
             <Header />
@@ -35,6 +39,21 @@ function Home() {
                     </Column.Group>
                 </Container>
             </Section>
+
+        {/*     <File id="form" enctype="multipart/form-data">
+                <File.Label>
+                    <File.Input type="file" name="avatar" />
+                    <File.CTA>
+                        <File.Icon>
+                            <FontAwesomeIcon icon={faUpload} />
+                        </File.Icon>
+                        <File.Label as="span">Choose a File</File.Label>
+                    </File.CTA>
+                </File.Label>
+                <Button type="submit" name="upload">Upload</Button>
+                <Image id="avatar" />
+            </File> */}
+            
         </Fragment>
     );
 }
