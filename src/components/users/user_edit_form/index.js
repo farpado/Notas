@@ -1,13 +1,15 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Button, Field, Control, Input, Column, Title, Help, Label, File, Image } from "rbx";
 import UserService from '../../../services/users';
+import UploadImg from '../upload_img/ReactUploadImage';
+import ReactUploadImage from '../upload_img/ReactUploadImage';
+import Teste from '../upload_img/teste';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
 
 function UsersEditForm() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [photo, setPhoto] = useState(null);
   const [status, setStatus] = useState(null);
 
   const initializeUser = async () => {
@@ -20,21 +22,23 @@ function UsersEditForm() {
     initializeUser()    
   }, [])
 
+  
   const handleSubmit = async (evt) => {
     evt.preventDefault();
 
     try {
-      await UserService.update({ email: email, name: name , photo:photo});
+      await UserService.update({ email: email, name: name });
       setStatus("success")
     } catch (err) {
       setStatus("error")
     }
   }
 
+ 
 
   return (
     <Fragment>
-      <form method="POST" onSubmit={handleSubmit} enctype="multipart/form-data">
+      <form method="POST" onSubmit={handleSubmit} encType="multipart/form-data">
         <Field>
           <Control>
             <Label className="has-text-grey">Nome</Label>
@@ -59,19 +63,22 @@ function UsersEditForm() {
             />
           </Control>
         </Field>
+       {/*  <ReactUploadImage/> */}
+        <Teste/>
 
-
-        <Field>
+  {/* <UploadImg/> */}
+  {/* <ReactUploadImage/> */}
+    {/*     <Field>
           <Control>
             <Label className="has-text-grey">Image</Label>
             <Input
               type="file"
-              name="photo"
-              //onChange={e => setPhoto(e.target.value)}
+              name="file"
               
+              onChange={e => setFile(e.target.value)}             
             />
           </Control>
-        </Field>
+        </Field> */}
         
         <Field>
           <Control>
@@ -88,20 +95,7 @@ function UsersEditForm() {
         {status == "success" &&
           <Help color="primary">Atualizado com sucesso</Help>
         }
-        
-{/*                <File id="form" enctype="multipart/form-data">
-                <File.Label>
-                    <File.Input type="file" name="photo" />
-                    <File.CTA>
-                        <File.Icon>
-                            <FontAwesomeIcon icon={faUpload} />
-                        </File.Icon>
-                        <File.Label as="span">Choose a File</File.Label>
-                    </File.CTA>
-                </File.Label>
-                <Button type="submit" name="upload">Upload</Button>
-                <Image id="avatar" />
-            </File> */}
+      
 
       </form>
     </Fragment>

@@ -3,14 +3,10 @@ import { Button, Field, Control, Input, Column, Help, Label } from "rbx";
 import UserService from '../../../services/users';
 
 
-
-
 function UsersEditFormPassword() {
   const [password, setPassword] = useState("");
   const [password_confirmation, setPasswordConfirmation] = useState("");
   const [status, setStatus] = useState(null);
-
-  
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();

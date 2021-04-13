@@ -5,6 +5,7 @@ import HeaderLogged from '../../../components/header_logged';
 import UsersEditForm from '../../../components/users/user_edit_form';
 import UsersEditFormPassword from '../../../components/users/user_edit_password_form';
 import UsersDelete from '../../../components/users/user_delete';
+import ReactUploadImage from '../../../components/users/upload_img/ReactUploadImage';
 
 
 function UserEdit(){
@@ -43,6 +44,7 @@ function UserEdit(){
             <UsersDelete/>
           </Column>
         </Column.Group>
+        <ReactUploadImage/>
       </Container>
     </Section>
   </Fragment>

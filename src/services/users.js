@@ -17,12 +17,19 @@ const UserService = {
        })
       localStorage.setItem('user',JSON.stringify(response.data));
   },
+  
   updatePassword: async(params)=>{
     await Api.put('/users/password', params,{
       headers:{ 'x-access-token': localStorage.getItem('token')}
     })
   },
-
+  
+  /* getUpload: async(params) => { 
+    await Api.post("/posts", params,{
+      headers:{'multipart/form-data':localStorage}
+    })
+  },
+ */
   delete: async()=>{
     await Api.delete('/users',{
       headers: {'x-access-token': localStorage.getItem('token')}
